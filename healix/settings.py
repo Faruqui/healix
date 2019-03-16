@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
-    'crispy_forms',
+    'crispy_forms','services'
 ]
 
 AUTH_USER_MODEL = 'users.User'

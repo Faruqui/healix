@@ -13,5 +13,3 @@ def about(request):
         'title' : 'About',
     }
     return render(request, 'home/about.html', context)
-class eprescription(TemplateView):
-    template_name = 'home/eprescription.html'
