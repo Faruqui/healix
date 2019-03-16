@@ -14,7 +14,7 @@ class Patient(models.Model):
     def __str__(self):
         return self.user.username
 
-    def calculate_bmi(self):
+    def get_bmi(self):
         return round ( (self.weight/(self.height**2)), 3 )
 
 
@@ -24,4 +24,3 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length = 200)
 
 class Prescription(models.Model):
-    
