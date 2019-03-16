@@ -22,5 +22,3 @@ class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     #patient = models.OneToManyField(Patient, on_delete=models.CASCADE)
     specialization = models.CharField(max_length = 200)
-
-class Prescription(models.Model):
