@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from django.views.generic import TemplateView
 def home(request):
     context = {
         'title' : 'Home',
@@ -13,3 +13,5 @@ def about(request):
         'title' : 'About',
     }
     return render(request, 'home/about.html', context)
+class eprescription(TemplateView):
+    template_name = 'home/eprescription.html'
