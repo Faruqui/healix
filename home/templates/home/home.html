@@ -1,0 +1,19 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+
+<h1>Home Page</h1>
+
+  {% if user.is_authenticated %}
+    <h3>Welcome authenticated  user</h3>
+  {% endif %}
+
+  {% if user.is_patient %}
+    <h3>Welcome patient  user</h3>
+  {% endif %}
+
+
+
+
+
+{% endblock content %}
