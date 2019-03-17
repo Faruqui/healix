@@ -7,7 +7,7 @@
             <small class="text-muted">
               <h1>{{ user.username }}</h1>
               {% if user.is_patient %}
-                <p>BMI: {{ user.patient.calculate_bmi }}</p>
+                <p>BMI: {{ user.patient.get_bmi }}</p>
               {% endif %}
             </small>
         </div>

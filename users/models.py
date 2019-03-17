@@ -15,7 +15,7 @@ class Patient(models.Model):
         return self.user.username
 
     def get_bmi(self):
-        return round ( (self.weight/(self.height**2)), 3 )
+        return round ( (self.weight/(self.height**2)), 2 )
 
 
 class Doctor(models.Model):
