@@ -2,12 +2,13 @@
 
 {% block content %}
 {% if user.is_doctor %}
-<form class="ol" action="index.html" method="post">
-  <div class="form-group">
+<h2>Doctor Name: {{ user.username }}</h2>
+<br><br>
+<form  method="POST">
+  {% csrf_token %}
 
-      <input type="text" class="form-control" id="medi" placeholder="Enter medicine" name="medi">
-    </div>
-    <button type="submit" class="btn btn-primary">add</button>
+  {{form.as_p }}
+<input type="submit" value="Save">
 </form>
 {%endif%}
 {% endblock content %}
