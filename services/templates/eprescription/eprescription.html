@@ -2,14 +2,13 @@
 
 {% block content %}
 {% if user.is_doctor %}
-<div class="container-fluid col-sm-6">
-  <h1 class="text-info">E-Prescription</h1>
-  <form class="ol" action="index.html" method="post">
-    <div class="form-group">
-        <input type="text" class="form-control" id="medi" placeholder="Enter medicine" name="medi">
-        <button type="submit" class="btn btn-primary">add</button>
-      </div>
-  </form>
-</div>
+<h2>Doctor Name: {{ user.username }}</h2>
+<br><br>
+<form  method="POST">
+  {% csrf_token %}
+
+  {{form.as_p }}
+<input type="submit" value="Save">
+</form>
 {%endif%}
 {% endblock content %}
