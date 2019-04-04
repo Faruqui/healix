@@ -6,6 +6,9 @@
         <div class="border-top pt-3">
             <small class="text-muted">
               <h1>{{ user.username }}</h1>
+              {% if user.is_doctor %}
+                <p>Specilization: {{ user.doctor.specialization }}</p>
+              {% endif %}
               {% if user.is_patient %}
                 <p>BMI: {{ user.patient.calculate_bmi }}</p>
               {% endif %}

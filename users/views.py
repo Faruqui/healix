@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, DoctorUpdateForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 
@@ -24,3 +24,21 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+
+@login_required
+def editdocprofile(request):
+    if request.method == 'POST':
+        form = DoctorUpdateForm(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = DoctorUpdateForm(instance=request.user)
+
+    context = {
+        'title' : 'Edit Profile',
+        'form' : form,
+    }
+    return render(request, 'users/editdocprofile.html', context)

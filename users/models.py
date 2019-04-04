@@ -24,5 +24,6 @@ class Patient(models.Model):
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    #patient = models.OneToManyField(Patient, on_delete=models.CASCADE)
-    specialization = models.CharField(max_length = 200)
+    specialization = models.CharField(max_length = 200, null = True)
+    education = models.CharField(max_length = 200, null = True)
+    image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
