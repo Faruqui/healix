@@ -19,12 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib.auth import views as auth_views
-
+from service import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('', include('users.urls')),
     path('', include('blog.urls')),
+    path('eprescription/', views.eprescription, name = 'epres'),
 
 ]
