@@ -15,3 +15,14 @@ class eprescriptions(models.Model):
     comment = models.CharField(max_length=250,null=True)
     test = models.CharField(max_length=250,null=True)
     date_posted = models.DateTimeField(default=timezone.now)
+
+
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=160)
+    address = models.CharField(max_length=200)
+    phone = models.IntegerField(max_length=13)
+    
+
+    def __str__(self):
+        return self.name

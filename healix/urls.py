@@ -17,15 +17,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
 from django.contrib.auth import views as auth_views
 from service import views
+from service.views import GeneratePDF,hospitallist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('', include('users.urls')),
     path('', include('blog.urls')),
+    #path('', include('service.urls')),
     path('eprescription/', views.eprescription, name = 'epres'),
+    path('pdf/',GeneratePDF.as_view(),name="pdf"),
+    path('hospital/',hospitallist.as_view(),name='hospital')
 
 ]
