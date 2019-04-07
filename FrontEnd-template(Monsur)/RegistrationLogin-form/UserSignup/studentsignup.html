@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+
+<head  >
+	<link rel = "stylesheet" href="styleForm.css">
+	<link rel = "stylesheet" href="styleTable.css">
+	<link rel ="stylesheet" href="stylesignup.css">
+	<title>
+	Doctor Patient Interaction </title>
+
+	<header  class="top-head"> Welcome to Healix </header>
+	<hr>
+</head>
+
+<body >
+	<div align="center">
+		<img src="baymaxnew.png" alt="baymax">
+	</div>
+
+
+	<header class="body-top">User Registration Form  </header>
+<form id="register-form" action=" " method="post" role="form">
+	<table  align="center" class="tablestyle">
+
+		<tbody >
+
+			<tr>
+				<td > Username  </td>
+				<td> <input  type = "text" name="username" id="username" required>  </td>
+
+
+
+			</tr>
+
+			<tr>
+				<td >Password  </td>
+				<td> <input type = "Password" name="password_1" id="password_1">  </td>
+			</tr>
+
+			<tr>
+				<td > Password  </td>
+				<td> <input type = "Password" name="password_2" id="password_2">  </td>
+			</tr>
+
+
+		</tbody>
+	</table>
+
+
+
+
+	<table  align="center" class="tablestyle">
+
+		<tbody >
+
+			<tr>
+				<td > First Name  </td>
+				<td> <input  type = "text" name="firstname" id="firstname">  </td>
+
+
+
+			</tr>
+
+			<tr>
+				<td >Middle Name  </td>
+				<td> <input type = "text" name="middlename" id="middlename">  </td>
+			</tr>
+
+			<tr>
+				<td > Last Name  </td>
+				<td> <input type = "text" name="lastname" id="lastname">  </td>
+			</tr>
+
+
+		</tbody>
+	</table>
+	<br><br><br><br>
+<div id="mainselection">
+  <select>
+    <option >Select an Option</option>
+    <option value ="patient">Patient</option>
+    <option value="doctor">Doctor</option>
+  </select>
+</div>
+
+<hr>
+			<div>
+		    <input type="submit" name="register-button" id="register-button" tabindex="4" class="submit-button" value="Sign up" onclick="myFuction(this.id)">
+		    </div>
+		</form>
+</body>
+
+</html>
