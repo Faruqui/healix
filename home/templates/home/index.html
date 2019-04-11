@@ -1,0 +1,523 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Healix-Doctor Patient Platform</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href={% static 'Index_files/img/baymax.png' %} rel="baymax">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/modal-video/css/modal-video.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'Index_files/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <header id="header" class="header header-hide">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto"><span>H</span>ealix</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#E-Appointment">E-Appointment</a></li>
+          <!-- <li class="menu-has-children"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li> -->
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero" class="wow fadeIn">
+    <div class="hero-container">
+      <h1>Welcome to Healix</h1>
+      <h2>Doctors and Patients in one platform</h2>
+      <img src="{% static 'Index_files/img/baymax.png'%}" alt="Hero Imgs">
+      <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+
+    </div>
+  </section><!-- #hero -->
+
+  <!--==========================
+    Get Started Section
+  ============================-->
+  <section id="get-started" class="padd-section text-center wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+
+        <h2>Get your first Service from here </h2>
+        <p class="separator">Make an E-appointment with doctor and get the best services</p>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-block">
+
+            <img src="{% static 'Index_files/img/svg/cloud.svg' %}" alt="img" class="img-fluid">
+            <h4>Introducing E-appointment</h4>
+            <p>Our website introduces you to the new feature of setting an E-appointment with your doctor.you visit to your doctor becomes more easier.</p>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-block">
+
+            <img src="{% static 'Index_files/img/svg/planet.svg' %}" alt="img" class="img-fluid">
+            <h4>E-Prescriptions</h4>
+            <p>Now you can get your Prescriptions online.Why coming to doctor's chember when you can get your Prescriptions online.</p>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-block">
+
+            <img src="{% static 'Index_files/img/svg/asteroid.svg' %}" alt="img" class="img-fluid">
+            <h4>Health Records</h4>
+            <p>You can save your previous and current health records in our website. It will help your doctor understanding better about your condition.</p>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!--==========================
+    About Us Section
+  ============================-->
+  <section id="about-us" class="about-us padd-section wow fadeInUp">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-md-5 col-lg-3">
+          <img src="{% static 'Index_files/img/plus.png' %}" alt="About">
+        </div>
+
+        <div class="col-md-7 col-lg-5">
+          <div class="about-content">
+
+            <h2><span>Healix</span>Doctor-Patient Interaction </h2>
+            <p>It has been seen that in last 8 years, the health issues have been quite an alarming matter in the rural/suburban areas. It is all due to lack of proper treatment. Good doctors are not willing to leave the city life and travel to a distant location to treat patients. So, they're finding a hard time to get some proper medications and treatments for all their health concern.
+            </p>
+
+            <ul class="list-unstyled">
+              <li><i class="fa fa-angle-right"></i>patient & Doctor profile.</li>
+              <li><i class="fa fa-angle-right"></i>E-Appointments.</li>
+              <li><i class="fa fa-angle-right"></i>E-Prescriptions.</li>
+              <li><i class="fa fa-angle-right"></i>Medicine suggestion by disease.</li>
+              <li><i class="fa fa-angle-right"></i>Doctor Rating System. </li>
+              <li><i class="fa fa-angle-right"></i>Easy to use. </li>
+             </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Features Section
+  ============================-->
+
+  <section id="features" class="padd-section text-center wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Features of Healix.</h2>
+        <p class="separator">These are the features which we will be providing to you for your best experience.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{% static 'Index_files/img/svg/healthrecords.png' %}" alt="img" class="img-fluid">
+            <h4>Health Records</h4>
+            <p>It is a cloud storage for everyone’s health records. A platform where all the previous prescriptions, reports and other medicinal records can be kept pre-recorded.
+			</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{% static 'Index_files/img/svg/patientDoc.png' %}" alt="img" class="img-fluid">
+            <h4>Patient-Doctor Platform</h4>
+            <p>It is a a platform where both doctors and patients are able to e-interact and get mutual benefits out of it. Patients will be able to get attended to all their health needs from a certified doctor.
+			</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{% static 'Index_files/img/svg/eprescription.png' %}" alt="img" class="img-fluid">
+            <h4>E-Prescriptions</h4>
+            <p>This platform ise giving people the option to have medically certified electronic prescriptions with all the treatments with their health needs and other medicinal guidance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-block">
+            <img src="{% static 'Index_files/img/svg/settingeappointments.png' %}" alt="img" class="img-fluid">
+            <h4>Setting E-Appoinments</h4>
+            <p>This is something that all people get frustrated with. Instead of waiting for queue to first get an appointment and then actually waiting for his time, people are able to set an appointment in the calendar and get attended to their health needs without waiting.
+			</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--==========================
+    Team Section
+  ============================-->
+  <section id="team" class="padd-section text-center wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+
+        <h2>Team Members</h2>
+        <p class="separator">Members who have contributed in this project .</p>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <img src="{% static 'Index_files/img/team/nirob.jpg' %}" class="img-responsive" alt="img">
+            <div class="team-content">
+              <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com/nirobxhasan"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://github.com/nirobxhasan"><i class="fa fa-github"></i></a></li>
+              </ul>
+              <span>Back-end Developer</span>
+              <h4>Nirob Hasan</h4>
+            </div>
+          </div>
+        </div>
+
+       <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <img src="{% static 'Index_files/img/team/faruqui.jpg' %}" class="img-responsive" alt="img">
+            <div class="team-content">
+              <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com/al.faruqui"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://github.com/Faruqui"><i class="fa fa-github"></i></a></li>
+              </ul>
+              <span>Back-end Developer</span>
+              <h4>Faruqui</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <img src="{% static 'Index_files/img/team/monsur.jpg' %}" class="img-responsive" alt="img">
+            <div class="team-content">
+              <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com/bluevirus007"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://github.com/monsurhillas007"><i class="fa fa-github"></i></a></li>
+              </ul>
+              <span>Monsur Hillas</span>
+              <h4>Front-end Developer</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-md-4 col-lg-3">
+          <div class="team-block bottom">
+            <img src="{% static 'Index_files/img/team/1.jpg' %}" class="img-responsive" alt="img">
+            <div class="team-content">
+              <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com/Tashfiq95"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://github.com/dead-shot95"><i class="fa fa-github"></i></a></li>
+              </ul>
+              <span>Tashfiquzzaman</span>
+              <h4>Front-end Developer</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!--==========================
+    Pricing Table Section
+  ============================-->
+  <section id="E-Appointment" class="padd-section text-center wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+
+        <h2>Get Appointment</h2>
+        <p class="separator">Now you can get an appointment with your doctor directly through our website.</p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!--==========================
+    Newsletter Section
+  ============================-->
+  <section id="newsletter" class="newsletter text-center wow fadeInUp">
+    <div class="overlay padd-section">
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-6">
+            <form class="form-inline" method="POST" action="#">
+
+              <input type="email" class="form-control " placeholder="Email Adress" name="email">
+              <button type="submit" class="btn btn-default"><i class="fa fa-location-arrow"></i>Subscribe</button>
+
+            </form>
+
+          </div>
+        </div>
+
+          <ul class="list-unstyled">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact" class="padd-section wow fadeInUp">
+
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Contact</h2>
+        <p class="separator">you can contact us below</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-4">
+
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>Block B<br>North South University,Bashundhara</p>
+            </div>
+
+            <div class="email">
+              <i class="fa fa-envelope"></i>
+              <p>Baymax@northsouth.edu</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+1 5589 55488 55s</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </section><!-- #contact -->
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-lg-4">
+          <div class="footer-logo">
+
+            <a class="navbar-brand" href="#">Healix</a>
+            <p>A project to unite doctor and patient in a virtual platform.</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>About Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Featured item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>About Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Featured item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>Support</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">faq</a></li>
+              <li><a href="#">Editor help</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 col-lg-2">
+          <div class="list-menu">
+
+            <h4>About Us</h4>
+
+            <ul class="list-unstyled">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Features item</a></li>
+              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="copyrights">
+      <div class="container">
+        <p>&copy; Copyrights Healix. All rights reserved.</p>
+        <div class="credits">
+          <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
+          -->
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'Index_files/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'Index_files/lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'Index_files/lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'Index_files/lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'Index_files/lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'Index_files/lib/easing/easing.min.js' %}"></script>
+  <script src="lib/modal-video/js/modal-video.js"></script>
+  <script src="{% static 'Index_files/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'Index_files/lib/wow/wow.min.js' %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'Index_files/contactform/contactform.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'Index_files/js/main.js' %}"></script>
+
+</body>
+</html>
