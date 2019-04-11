@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, DoctorUpdateForm
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
+from .models import Patient, Doctor
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -42,3 +44,8 @@ def editdocprofile(request):
         'form' : form,
     }
     return render(request, 'users/editdocprofile.html', context)
+
+
+class PatientListView(ListView):
+    model = Patient
+    context_object_name = 'patients'

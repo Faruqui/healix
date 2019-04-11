@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from PIL import Image
 
+#from service.models import Hospital
+
 class User(AbstractUser):
     is_patient = models.BooleanField('patient status', default=False)
     is_doctor = models.BooleanField('doctor status', default=False)
@@ -27,3 +29,4 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length = 200, null = True)
     education = models.CharField(max_length = 200, null = True)
     image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
+    #hospital = models.ForeignKey(Hospital,null=True, blank=True,on_delete=models.CASCADE)

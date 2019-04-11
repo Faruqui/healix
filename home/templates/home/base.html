@@ -60,13 +60,13 @@
             {% endif %}
 
             {% if user.is_doctor %}
-              <a class="nav-item nav-link" href="#">Patients</a>
-              <a class="nav-item nav-link " href="{% url 'epres'%}">E-Prescription</a>
+              <a class="nav-item nav-link" href="{% url 'patients'%}">Patients</a>
+              <a class="nav-item nav-link " href="{% url 'createPres'%}">E-Prescription</a>
 
             {% endif %}
 
 
-
+          <a class="nav-item nav-link" href="{% url 'hospitals' %}">Hospitals</a>
           <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
         </div>
         <!-- Navbar Right Side -->

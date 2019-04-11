@@ -1,6 +1,7 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import PatientListView
 
 urlpatterns = [
     path('register/', views.register, name = 'register'),
@@ -8,5 +9,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name = 'users/logout.html'), name = 'logout'),
     path('profile/', views.profile, name = 'profile'),
     path('docedit/', views.editdocprofile, name = 'doc_edit'),
-    
+    path('patients/', PatientListView.as_view(), name = 'patients'),
+
 ]

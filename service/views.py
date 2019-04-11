@@ -1,26 +1,37 @@
 from django.shortcuts import render
-from .forms import EpresForm
-from .models import eprescriptions,Hospital
+
+from .models import Prescription,Hospital
 from django.http import HttpResponse
 from django.views.generic import View,ListView
 from django.template.loader  import get_template
 from .utils import render_to_pdf
-# Create your views here.
-def eprescription(request):
-    form = EpresForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form=EpresForm()
-    context={
-        'form':form
-    }
-    return render(request,"eprescription/eprescription.html",context)
+from . import models
 
-class hospitallist(ListView):
-    context_object_name = Hospital
-    template_name = 'hospital.html'
-    context_object_name = 'hospital'
-    
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from django.http import Http404
+from django.views import generic
+
+# Create your views here.
+
+class CreatePrescription(LoginRequiredMixin, generic.CreateView):
+    #form_class = forms.PostForm
+    fields = ('patient','medicine_name', 'comment')
+    model = models.Prescription
+    template_name = "eprescription/prescription_form.html"
+    success_url = reverse_lazy("home")
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.doctor_name = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+class HospitalListView(ListView):
+    model = Hospital
+    context_object_name = 'hospitals'
 
 
 class GeneratePDF(View):
