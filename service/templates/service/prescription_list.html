@@ -3,25 +3,27 @@
 
 {% block content %}
 <div class="container col-md-10">
-  <legend class="border-bottom mb-4">All Hospitals({{prescriptions.count }}): </legend>
+  <legend class="border-bottom mb-4">All prescriptions: </legend>
   <table class="table table-hover table-bordered table-striped">
     <thead>
       <tr class="table-primary">
-        <th>Name</th>
-        <th>Area</th>
-        <th>Address</th>
-        <th>Phone</th>
+        <th>Doctor</th>
+        <th>Patient</th>
+        <th>Medicines</th>
+        <th>Comment</th>
       </tr>
     </thead>
 
     <tbody>
       {% for p in prescriptions %}
-      <tr>
-        <td>{{p.doctor_name}}</td>
-        <td>{{p.patient}}</td>
-        <td>{{p.medicine_name}}</td>
-        <td>{{ p.comment }}</td>
-      </tr>
+        {% if p.doctor_name == user or p.patient == user.patient %}
+        <tr>
+          <td>{{p.doctor_name}}</td>
+          <td>{{p.patient}}</td>
+          <td>{{p.medicine_name}}</td>
+          <td>{{ p.comment }}</td>
+        </tr>
+        {% endif %}
       {% endfor %}
     </tbody>
 

@@ -19,3 +19,16 @@ class DoctorUpdateForm(forms.ModelForm):
     class Meta:
         model = Doctor
         fields = ['specialization', 'education', 'image']
+
+class PatientUpdateForm(forms.ModelForm):
+    height = forms.FloatField(required = False, label = (u'Height (in Meters):'))
+    weight = forms.FloatField(required = False, label = (u'Weight (in KG):'))
+    class Meta:
+        model = Patient
+        fields = [ 'height', 'weight', 'image','health_problem',]
+
+
+class PrescriptionRequestForm(forms.ModelForm):
+    class Meta:
+        model = Patient
+        fields = ['health_problem']

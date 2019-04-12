@@ -67,7 +67,7 @@
           {% if user.is_patient %}
           <li class="menu-has-children"><a href="">Service</a>
             <ul>
-              <li><a href="#">E-Prescription</a></li>
+              <li><a href="{% url 'prescription_request' %}">E-Prescription</a></li>
               <li><a href="#">E-Appointment</a></li>
             </ul>
           </li>
@@ -92,7 +92,14 @@
           <li class="menu-has-children"><a href="">You</a>
             <ul>
               <li><a href="{% url 'profile'  %}">Profile</a></li>
-              <li><a href="#">E-Prescriptions</a></li>
+              {% if user.is_doctor %}
+                <li><a href="{% url 'docedit'  %}">Edit Profile</a></li>
+              {% endif %}
+              {% if user.is_patient %}
+                <li><a href="{% url 'patedit'  %}">Edit Profile</a></li>
+              {% endif %}
+
+              <li><a href="{% url 'prescriptions'  %}">E-Prescriptions</a></li>
               <li><a href="{% url 'logout' %}">Logout</a></li>
             </ul>
           </li>

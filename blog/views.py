@@ -19,6 +19,11 @@ class PostListView(ListView):
     ordering = ['-date_posted'] #for ordering accoing to date
     paginate_by = 10 #buit in paginator function
 
+    def get_context_data(self,**kwargs):
+        context = super(PostListView,self).get_context_data(**kwargs)
+        context['title'] = "Health Blog"
+        return context
+
 
 class PostDetailView(DetailView):
     model = Post

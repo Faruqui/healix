@@ -9,8 +9,9 @@
               {% if user.is_doctor %}
                 <p>Specilization: {{ user.doctor.specialization }}</p>
               {% endif %}
-              {% if user.is_patient %}
-                <p>BMI: {{ user.patient.calculate_bmi }}</p>
+              {% if user.is_patient and user.patient.get_bmi %}
+                <p>BMI: {{ user.patient.get_bmi }}</p>
+                <p>User ID: {{ user.id }}</p>
               {% endif %}
             </small>
         </div>

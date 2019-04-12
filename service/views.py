@@ -43,8 +43,18 @@ class UserPrescriptionList(LoginRequiredMixin, ListView):
     template_name = 'service/prescription_list.html'
 
     def get_queryset(self):
-        user = get_object_or_404(User, id = self.kwargs.get('user_id'))
-        return Prescription.objects.filter(doctor_name = user).order_by('-date_posted')
+        user = get_object_or_404(User, username = self.kwargs.get('username'))
+        return Prescription.objects.filter(doctor_name = user)
+
+
+
+def prescription_list(request):
+    context = {
+        'prescriptions' : Prescription.objects.all(),
+        'title' : 'Prescription',
+    }
+    return render(request, 'service/prescription_list.html', context)
+
 
 class GeneratePDF(View):
     def get(self,request,*args,**kwargs):
