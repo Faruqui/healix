@@ -11,8 +11,8 @@
           <img class="rounded-circle account-img" src="#" alt="">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
-              <small class="text-muted">Posted: {{ post.date_posted|date:"d M, Y" }}</small>
+              <a class="mr-2" href="#">Dr. {{ post.author }}</a>
+              <small class="text-muted float-right">Posted: {{ post.date_posted|date:"d M, Y" }}</small>
 
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>

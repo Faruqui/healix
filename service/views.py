@@ -35,6 +35,8 @@ class HospitalListView(ListView):
     model = Hospital
     context_object_name = 'hospitals'
 
+
+
 class UserPrescriptionList(LoginRequiredMixin, ListView):
     models = Prescription
     context_object_name = 'prescriptions'

@@ -49,3 +49,7 @@ def editdocprofile(request):
 class PatientListView(ListView):
     model = Patient
     context_object_name = 'patients'
+
+class DoctorListView(ListView):
+    model = Doctor
+    context_object_name = 'doctors'
