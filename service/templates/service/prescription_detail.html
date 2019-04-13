@@ -1,27 +1,46 @@
 {% extends "home/base.html" %}
 
+{% load static %}
+
+
 {% block content %}
+
+<htlm>
 <div class="container col-md-9">
+<link href="{% static 'css/syle.css' %}" rel="stylesheet">
+
+
   <article class="media content-section">
 
+
+
       <div class="media-body">
-        <div class="article-metadata">
 
-          <h5>Doctor: {{ object.doctor_name }}</h5>
-          <small>Specilization: {{ object.doctor_name.doctor.specialization }}</small><br>
-          <small>Specilization: {{ object.doctor_name.doctor.education }}</small>
+          <h2 class="text-center"> Healix </h2>
+            <p class="text-center">A Online solution for doctor and patients </p>
+            <br>
+            <hr>
+            <hr>
+
+        <div class="article-metadata">
           <small class="float-right">Date: {{ object.date_posted|date:"d/m/y" }}</small>
+          <h5>Doctor: {{ object.doctor_name }}</h5><br>
+          <small>Specilization: {{ object.doctor_name.doctor.specialization }}</small><br><br><br>
+          <small>Specilization: {{ object.doctor_name.doctor.education }}</small>
+
         </div>
         <div class="article-metadata">
+          <br><br>
           <h5>Patient: {{ object.patient }}</h5>
-          <small>Problem: {{ object.patient.health_problem }}</small><br>
+          <small>Problem: {{ object.patient.health_problem }}</small><br><br><br>
         </div>
-
+        <br><br>
         <legend>Medicines:</legend>
-        <small>{{ object.medicine_name }}</small>
-        <p class="article-content border-top mb-2">{{ object.comment }}</p>
+        <small>{{ object.medicine_name }}</small><br><br>
+        <p class="article-content border-top mb-2">{{ object.comment }}</p><br>
       </div>
     </article>
 </div>
+</html>
 
 {% endblock content %}
