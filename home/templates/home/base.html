@@ -89,7 +89,7 @@
           <li><a href="{% url 'hospitals' %}">Hospitals</a></li>
 
           {% if user.is_authenticated %}
-          <li class="menu-has-children"><a href="">You</a>
+          <li class="menu-has-children"><a href="">Your Tab</a>
             <ul>
               <li><a href="{% url 'profile'  %}">Profile</a></li>
               {% if user.is_doctor %}

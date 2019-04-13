@@ -4,13 +4,14 @@ from users.models import User, Doctor, Patient
 
 from .models import Prescription,Hospital
 from django.http import HttpResponse
-from django.views.generic import View,ListView
+from django.views.generic import View,ListView, DetailView
 from django.template.loader  import get_template
 from .utils import render_to_pdf
 from . import models
 
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.http import Http404
 from django.views import generic
@@ -46,8 +47,10 @@ class UserPrescriptionList(LoginRequiredMixin, ListView):
         user = get_object_or_404(User, username = self.kwargs.get('username'))
         return Prescription.objects.filter(doctor_name = user)
 
+class PrescriptionDetailView(LoginRequiredMixin, DetailView):
+    model = Prescription
 
-
+@login_required
 def prescription_list(request):
     context = {
         'prescriptions' : Prescription.objects.all(),
@@ -55,6 +58,17 @@ def prescription_list(request):
     }
     return render(request, 'service/prescription_list.html', context)
 
+
+class GeneratePdf(View):
+    def get(self, request, *args, **kwargs):
+        data = {
+             #'today': datetime.date.today(),
+            'amount': 39.99,
+            'customer_name': 'Cooper Mann',
+            'order_id': 1233434,
+        }
+        pdf = render_to_pdf('service/prescription_detail.html', data)
+        return HttpResponse(pdf, content_type='application/pdf')
 
 class GeneratePDF(View):
     def get(self,request,*args,**kwargs):

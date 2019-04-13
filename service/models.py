@@ -11,6 +11,9 @@ class Prescription(models.Model):
     comment = models.CharField(max_length=250,null=True)
     date_posted = models.DateTimeField(default=timezone.now)
 
+    def get_absolute_url(self):
+        return reverse('prescription-detail', kwargs={'pk': self.pk})
+
 
 
 class Hospital(models.Model):

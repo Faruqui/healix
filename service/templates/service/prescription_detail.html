@@ -1,0 +1,27 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<div class="container col-md-9">
+  <article class="media content-section">
+
+      <div class="media-body">
+        <div class="article-metadata">
+
+          <h5>Doctor: {{ object.doctor_name }}</h5>
+          <small>Specilization: {{ object.doctor_name.doctor.specialization }}</small><br>
+          <small>Specilization: {{ object.doctor_name.doctor.education }}</small>
+          <small class="float-right">Date: {{ object.date_posted|date:"d/m/y" }}</small>
+        </div>
+        <div class="article-metadata">
+          <h5>Patient: {{ object.patient }}</h5>
+          <small>Problem: {{ object.patient.health_problem }}</small><br>
+        </div>
+
+        <legend>Medicines:</legend>
+        <small>{{ object.medicine_name }}</small>
+        <p class="article-content border-top mb-2">{{ object.comment }}</p>
+      </div>
+    </article>
+</div>
+
+{% endblock content %}

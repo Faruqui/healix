@@ -46,9 +46,12 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="feature-block">
-
-          <img src="{% static 'home/style/img/svg/eprescription.png'%}" alt="img" class="img-fluid">
-          <h4>E-Prescriptions</h4>
+          {% if user.is_patient %}
+          <a href="{% url 'prescription_request' %}">
+            {% endif %}
+            <img src="{% static 'home/style/img/svg/eprescription.png'%}" alt="img" class="img-fluid">
+            <h4>E-Prescriptions</h4>
+          </a>
           <p>Now you can get your Prescriptions online.Why coming to doctor's chember when you can get your Prescriptions online.</p>
 
 
@@ -57,9 +60,10 @@
 
       <div class="col-md-6 col-lg-4">
         <div class="feature-block">
-
-          <img src="{% static 'home/style/img/svg/healthrecords.png '%}" alt="img" class="img-fluid">
-          <h4>Health Records</h4>
+          <a href="{% url 'prescriptions' %}">
+            <img src="{% static 'home/style/img/svg/healthrecords.png '%}" alt="img" class="img-fluid">
+            <h4>Health Records</h4>
+          </a>
           <p>You can save your previous and current health records in our website. It will help your doctor understanding better about your condition.</p>
 
 

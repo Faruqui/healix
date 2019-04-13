@@ -11,6 +11,7 @@
         <th>Patient</th>
         <th>Medicines</th>
         <th>Comment</th>
+        <th>Details</th>
       </tr>
     </thead>
 
@@ -22,6 +23,7 @@
           <td>{{p.patient}}</td>
           <td>{{p.medicine_name}}</td>
           <td>{{ p.comment }}</td>
+          <td><a href="{% url 'prescription-detail' p.id %}">See Details</a></td>
         </tr>
         {% endif %}
       {% endfor %}
