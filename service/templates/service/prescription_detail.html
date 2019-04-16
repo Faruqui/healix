@@ -1,46 +1,106 @@
+
 {% extends "home/base.html" %}
 
-{% load static %}
+
 
 
 {% block content %}
 
-<htlm>
-<div class="container col-md-9">
-<link href="{% static 'css/syle.css' %}" rel="stylesheet">
+<!DOCTYPE html>
+<head>
+  {% load static %}
+    <link href="{% static 'service/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+<title>
+</title>
+
+<h2>
+</h2>
+<body>
+  <div>
+
+  <div class="headersec">
+    <div class="top-name">
+
+      <span class="healix-title">
+        <h2> Healix </h2>
+      </span>
+
+      <p> An online solution for doctor and patients </p>
+    </div>
+      <span class="date-class">
+        <h4> Date : {{object.date_posted|date:"d/m/y"}} </h4>
+      </span>
+
+      <ul>
+
+      <span class="DoctorName"> Dr. {{object.doctor_name}}  </span>
+      <span class="Specialization"> {{object.doctor_name.doctor.Specialization}} </span>
+      <span class="Specialization"> {{object.doctor_name.doctor.education}}  </span>
+
+    </ul>
+    <ul>
+      <span class="Specialization"> Block c,Bashundhara,Dhaka-1229 </span>
+      <span class="date-class"> <p> phone : 01700000000 </p> </span>
+    </ul>
+    <span class="date-class"> <p>Email : healix@northsouth.edu </p> </span>
 
 
-  <article class="media content-section">
+
+  </div>
 
 
+    <hr size="5px" color="red">
+    <div>
 
-      <div class="media-body">
+      <ul>
 
-          <h2 class="text-center"> Healix </h2>
-            <p class="text-center">A Online solution for doctor and patients </p>
-            <br>
-            <hr>
-            <hr>
+        <span style="padding-right:500px" >  Patient Name : {{object.patient}}  </span>
+       <span > Age : null  </span>
+        <span style="padding-left:500px" >    Gender : M/F </span>
+      </ul>
 
-        <div class="article-metadata">
-          <small class="float-right">Date: {{ object.date_posted|date:"d/m/y" }}</small>
-          <h5>Doctor: {{ object.doctor_name }}</h5><br>
-          <small>Specilization: {{ object.doctor_name.doctor.specialization }}</small><br><br><br>
-          <small>Specilization: {{ object.doctor_name.doctor.education }}</small>
+    <br>
 
-        </div>
-        <div class="article-metadata">
-          <br><br>
-          <h5>Patient: {{ object.patient }}</h5>
-          <small>Problem: {{ object.patient.health_problem }}</small><br><br><br>
-        </div>
-        <br><br>
-        <legend>Medicines:</legend>
-        <small>{{ object.medicine_name }}</small><br><br>
-        <p class="article-content border-top mb-2">{{ object.comment }}</p><br>
-      </div>
-    </article>
-</div>
-</html>
+      <ul>
+
+        <span style="padding-right:550px" >  Address :  </span>
+       <span > Date : {{object.date_posted|date:"d/m/y"}}  </span>
+
+      </ul>
+
+
+    <div class ="problem">
+      <h4> Problem :  </h4>
+
+        <p class="problem-class">
+          {{object.patient.health_problem}}
+       </p>
+
+    </div>
+
+    <div class ="problem">
+      <h4> Medicine : </h4>
+
+        <p class="problem-class">
+        {{object.comment}}
+       </p>
+
+    </div>
+
+    <div>
+      <h4> Comment : </h4>
+        <p class="comment"> It should be treated Carefully </p>
+    </div>
+
+
+    </div>
+
+  </div>
+    <hr font-size="3px" color="red" style="margin-bottom:100px">
+
+  </body>
+  </html>
+
 
 {% endblock content %}
