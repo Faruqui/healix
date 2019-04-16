@@ -8,7 +8,6 @@
     <thead>
       <tr class="table-primary">
         <th>Name</th>
-        <th>Area</th>
         <th>Address</th>
         <th>Phone</th>
       </tr>
@@ -18,8 +17,8 @@
       {% for hospital in hospitals %}
       <tr>
         <td>{{hospital.name}}</td>
-        <td>{{hospital.area}}</td>
-        <td>{{hospital.address}}</td>
+        <!-- <td>{{hospital.area}}</td> -->
+        <td>{{hospital.location}}</td>
         <td>{{ hospital.phone }}</td>
       </tr>
       {% endfor %}
