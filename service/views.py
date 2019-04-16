@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from users.models import User, Doctor, Patient
 
-from .models import Prescription,Hospital
+from .models import Prescription,Hospital,Appointment
 from django.http import HttpResponse
 from django.views.generic import View,ListView, DetailView
 from django.template.loader  import get_template
@@ -23,6 +23,20 @@ class CreatePrescription(LoginRequiredMixin, generic.CreateView):
     fields = ('patient','medicine_name', 'comment')
     model = models.Prescription
     template_name = "eprescription/prescription_form.html"
+    success_url = reverse_lazy("patients")
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.doctor_name = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+class CreateAppointment(LoginRequiredMixin, generic.CreateView):
+    #form_class = forms.PostForm
+    fields = ('doctor','description', 'active','hospital','hospital','startTime','endTime','date')
+    model = models.Appointment
+    template_name = "service/appointment_form.html"
     success_url = reverse_lazy("patients")
 
     def form_valid(self, form):

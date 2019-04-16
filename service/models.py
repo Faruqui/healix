@@ -54,5 +54,5 @@ class Appointment(models.Model):
     startTime = models.TimeField()
     endTime = models.TimeField()
     date = models.DateField()
-
-    
+def __str__(self):
+    return self.doctor
