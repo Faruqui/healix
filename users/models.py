@@ -30,3 +30,5 @@ class Doctor(models.Model):
     education = models.CharField(max_length = 200, null = True)
     image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
     #hospital = models.ForeignKey(Hospital,null=True, blank=True,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.user.username
