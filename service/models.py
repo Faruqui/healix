@@ -55,3 +55,27 @@ class Appointment(models.Model):
     startTime = models.TimeField()
     endTime = models.TimeField()
     date = models.DateField()
+#Health Record  database Model.
+class HealthRecord(models.Model):
+    role_choices = (
+        ('Prescription','Prescription'),
+        ('Bloodtest','Bloodtest'),
+        ('X_Ray','X-Ray'),
+        ('AIDS_Test','AIDS Test'),
+        ('Aldosterone_in_Urine','Aldosterone in Urine'),
+        ('Eye_Angiogram','Eye Angiogram'),
+        ('Electroencephalogram ','Electroencephalogram '),
+        ('ECT','ECT'),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+        # ('',''),
+    )
+    type_of_Record = models.CharField(max_length=15, null = True,choices=role_choices)
+    file = models.FileField(null = True)
+    date = models.DateField()

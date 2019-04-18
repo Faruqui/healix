@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from users.models import User, Doctor, Patient
 
-from .models import Prescription,Hospital,Appointment
+from .models import Prescription,Hospital,Appointment,HealthRecord
 from django.http import HttpResponse
 from django.views.generic import View,ListView, DetailView
 from django.template.loader  import get_template
@@ -17,7 +17,7 @@ from django.http import Http404
 from django.views import generic
 
 # Create your views here.
-
+#e-Prescription function . set data in the database.
 class CreatePrescription(LoginRequiredMixin, generic.CreateView):
     #form_class = forms.PostForm
     fields = ('patient','medicine_name', 'comment')
@@ -31,7 +31,7 @@ class CreatePrescription(LoginRequiredMixin, generic.CreateView):
         self.object.save()
         return super().form_valid(form)
 
-
+#make a appointment by gving information
 class CreateAppointment(LoginRequiredMixin, generic.CreateView):
     #form_class = forms.PostForm
     fields = ('doctor','description', 'active','hospital','hospital','startTime','endTime','date')
@@ -44,11 +44,27 @@ class CreateAppointment(LoginRequiredMixin, generic.CreateView):
         self.object.doctor_name = self.request.user
         self.object.save()
         return super().form_valid(form)
+#get health record from patients.and set in the database .
+class SetHealthRecord(LoginRequiredMixin, generic.CreateView):
 
+    fields = ('type_of_Record','file','date')
+    model = models.HealthRecord
+    template_name = "service/healthrecord_form.html"
+    success_url = reverse_lazy("patients")
 
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.doctor_name = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+#view all hospital
 class HospitalListView(ListView):
     model = Hospital
     context_object_name = 'hospitals'
+#show all health record
+class MyHeathRecord(ListView):
+    model = HealthRecord
+    context_object_name = 'healthrecords'
 
 
 
@@ -72,7 +88,7 @@ def prescription_list(request):
     }
     return render(request, 'service/prescription_list.html', context)
 
-
+#convert HTML to PDF
 class GeneratePdf(View):
     def get(self, request, *args, **kwargs):
         data = {

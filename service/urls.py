@@ -19,4 +19,7 @@ urlpatterns = [
     #path('prescriptions/',UserPrescriptionList.as_view(),name="prescriptions"),
     path('prescriptions/', views.prescription_list, name = 'prescriptions'),
     path('prescriptions/<int:pk>/', PrescriptionDetailView.as_view(), name = 'prescription-detail'),
+    path('healthrecord/',views.SetHealthRecord.as_view(),name = 'healthrecord'),
+    path('myheathrecord',views.MyHeathRecord.as_view(),name='myhealthrecord')
+
 ]
