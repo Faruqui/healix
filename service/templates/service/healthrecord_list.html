@@ -20,7 +20,7 @@
         <td>{{record.type_of_Record}}</td>
         <!-- <td>{{hospital.area}}</td> -->
         <td>{{record.date}}</td>
-        <td>{{ record.file }}</td>
+        <td><a href="{{record.file.url}}">See details</a></td>
       </tr>
       {% endfor %}
     </tbody>
